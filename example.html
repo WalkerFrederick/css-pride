@@ -1,0 +1,54 @@
+<!doctype html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="css-price example">
+    <meta name="keywords" content="lgbt, gay, pride">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/navbar.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="trans-nav">
+        <h1>css-pride</h1>
+        <!--
+        <div class="flagbar-container"><div class="flagbar" style="background: #FF4136; height: 10px;"></div></div>
+        <div class="flagbar-container"><div class="flagbar" style="background: #FF851B; height: 10px;"></div></div>
+        <div class="flagbar-container"><div class="flagbar" style="background: #FFDC00; height: 10px;"></div></div>
+        <div class="flagbar-container"><div class="flagbar" style="background: #01FF70; height: 10px;"></div></div>
+        <div class="flagbar-container"><div class="flagbar" style="background: #0074D9; height: 10px;"></div></div>
+        <div class="flagbar-container"><div class="flagbar" style="background: #B10DC9; height: 10px;"></div></div>
+        -->
+
+        <div class="flagbar-container"><div class="flagbar" style="background: #5bcefa;"></div></div>
+        <div class="flagbar-container"><div class="flagbar" style="background: #f5a9b8;"></div></div>
+        <div class="flagbar-container"><div class="flagbar" style="background: #fff;"></div></div>
+        <div class="flagbar-container"><div class="flagbar" style="background: #f5a9b8;"></div></div>
+        <div class="flagbar-container"><div class="flagbar" style="background: #5bcefa;"></div></div>
+
+
+    </nav>
+
+
+    <button class="test-button" onclick="test()">Click Me</button>
+
+    <script>
+        let flagBars = document.getElementsByClassName('flagbar');
+        let flagBarsContainer = document.getElementsByClassName('flagbar-container');
+
+        let currentBarPos = 0;
+        for (flagBar of flagBarsContainer){
+            flagBar.style.top = currentBarPos + 'px';
+            currentBarPos = currentBarPos + 12;
+
+        }
+        let test = () => {
+            for (flagBar of flagBars){
+                flagBar.style.transition = 'width ' + Math.ceil(Math.random()*100%3.3333) + 's';
+                flagBar.style.top = currentBarPos + 'px';
+
+                flagBar.classList.add('flagbar-active');
+
+            }
+        }
+    </script>
+</body>
